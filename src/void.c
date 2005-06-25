@@ -306,7 +306,7 @@ xf86VoidInit(InputDriverPtr	drv,
 #ifdef XFree86LOADER
 static
 #endif
-InputDriverRec VOID = {
+_X_EXPORT InputDriverRec VOID = {
     1,				/* driver version */
     "void",			/* driver name */
     NULL,			/* identify */
@@ -365,9 +365,11 @@ static XF86ModuleVersionInfo xf86VoidVersionRec =
 				/* a tool */
 };
 
-XF86ModuleData voidModuleData = {&xf86VoidVersionRec,
-				  xf86VoidPlug,
-				  xf86VoidUnplug};
+_X_EXPORT XF86ModuleData voidModuleData = {
+    &xf86VoidVersionRec,
+    xf86VoidPlug,
+    xf86VoidUnplug
+};
 
 #endif /* XFree86LOADER */
 
