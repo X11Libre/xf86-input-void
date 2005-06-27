@@ -303,9 +303,6 @@ xf86VoidInit(InputDriverPtr	drv,
     return (pInfo);
 }
 
-#ifdef XFree86LOADER
-static
-#endif
 _X_EXPORT InputDriverRec VOID = {
     1,				/* driver version */
     "void",			/* driver name */
