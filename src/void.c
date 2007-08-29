@@ -283,8 +283,10 @@ xf86VoidInit(InputDriverPtr	drv,
     pInfo->flags = XI86_KEYBOARD_CAPABLE | XI86_POINTER_CAPABLE | XI86_SEND_DRAG_EVENTS;
     pInfo->device_control = xf86VoidControlProc;
     pInfo->read_input = NULL;
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) == 0
     pInfo->motion_history_proc = xf86GetMotionEvents;
     pInfo->history_size = 0;
+#endif    
     pInfo->control_proc = NULL;
     pInfo->close_proc = NULL;
     pInfo->switch_mode = NULL;
