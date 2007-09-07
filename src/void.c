@@ -38,7 +38,7 @@
 
 #include <misc.h>
 #include <xf86.h>
-#define NEED_XF86_TYPES
+#define NEED_XF86_TYPES 1
 #if !defined(DGUX)
 #include <xisb.h>
 #endif
@@ -295,7 +295,7 @@ xf86VoidInit(InputDriverPtr	drv,
     pInfo->fd = -1;
     pInfo->dev = NULL;
     pInfo->private_flags = 0;
-    pInfo->always_core_feedback = 0;
+    pInfo->always_core_feedback = NULL;
     pInfo->conf_idev = dev;
 
     /* Collect the options, and process the common options. */
