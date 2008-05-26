@@ -209,7 +209,9 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 
 	if (InitValuatorClassDeviceStruct(device, 
 					  2,
-					  xf86GetMotionEvents, 
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
+					  xf86GetMotionEvents,
+#endif
 					  0,
 					  Absolute) == FALSE) {
 	  InitValuatorAxisStruct(device,
