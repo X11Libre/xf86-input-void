@@ -215,18 +215,6 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 	  ErrorF("unable to allocate Button class device\n");
 	  return !Success;
 	}
-      
-/*
-	if (InitFocusClassDeviceStruct(device) == FALSE) {
-	  ErrorF("unable to init Focus class device\n");
-	  return !Success;
-	}
-          
-	if (InitKeyClassDeviceStruct(device, &void_keysyms, NULL) == FALSE) {
-	  ErrorF("unable to init key class device\n"); 
-	  return !Success;
-	}
-*/
 
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 5
 	memset(&rmlvo, 0, sizeof(XkbRMLVOSet));
