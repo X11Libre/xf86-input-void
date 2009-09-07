@@ -177,9 +177,6 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
     InputInfoPtr pInfo;
     unsigned char map[MAXBUTTONS + 1];
     int i;
-#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 5
-    XkbRMLVOSet rmlvo;
-#endif
     Bool result;
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
     Atom btn_labels[MAXBUTTONS] = {0};
@@ -215,8 +212,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 	}
 
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 5
-	memset(&rmlvo, 0, sizeof(XkbRMLVOSet));
-	result = InitKeyboardDeviceStruct(device, &rmlvo,
+	result = InitKeyboardDeviceStruct(device, NULL,
 					  BellProc, KeyControlProc);
 #else
 	result = InitKeyboardDeviceStruct((DevicePtr)device, &void_keysyms,
