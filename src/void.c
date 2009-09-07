@@ -21,8 +21,6 @@
  *
  */
 
-/* $XFree86: xc/programs/Xserver/hw/xfree86/input/void/void.c,v 1.1 1999/11/19 13:54:57 hohndel Exp $ */
-
 /* Input device which doesn't output any event. This device can be used
  * as a core pointer or as a core keyboard.
  */
@@ -408,11 +406,3 @@ _X_EXPORT XF86ModuleData voidModuleData = {
 };
 
 #endif /* XFree86LOADER */
-
-/*
- * Local variables:
- * change-log-default-name: "~/xinput.log"
- * c-file-style: "bsd"
- * End:
- */
-/* end of void.c */

@@ -1,4 +1,3 @@
-.\" $XFree86: xc/programs/Xserver/hw/xfree86/input/void/void.man,v 1.1 2001/01/24 00:06:38 dawes Exp $ 
 .\" shorthand for double quote that works everywhere.
 .ds q \N'34'
 .TH VOID __drivermansuffix__ __vendorversion__
@@ -25,5 +24,3 @@ details and for options that can be used with all input drivers.  This
 driver doesn't have any configuration options in addition to those.
 .SH "SEE ALSO"
 __xservername__(__appmansuffix__), __xconfigfile__(__filemansuffix__), Xserver(__appmansuffix__), X(__miscmansuffix__).
-.SH AUTHORS
-Authors include...
