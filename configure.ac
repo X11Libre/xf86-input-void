@@ -57,13 +57,10 @@ inputdir=${moduledir}/input
 AC_SUBST(inputdir)
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XORG, [xorg-server >= 1.0.99.901] xproto $REQUIRED_MODULES)
-sdkdir=$(pkg-config --variable=sdkdir xorg-server)
+PKG_CHECK_MODULES(XORG, [xorg-server >= 1.0.99.901] xproto)
 
 CFLAGS="$CFLAGS $XORG_CFLAGS "' -I$(top_srcdir)/src'
 AC_SUBST([CFLAGS])
-
-# Checks for libraries.
 
 # Checks for header files.
 AC_HEADER_STDC
