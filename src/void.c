@@ -97,8 +97,8 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
     Atom btn_labels[MAXBUTTONS] = {0};
     Atom axes_labels[2] = {0};
 
-    axes_labels[0] = XIGetKnownProperty(AXIS_LABEL_PROP_REL_X);
-    axes_labels[1] = XIGetKnownProperty(AXIS_LABEL_PROP_REL_Y);
+    axes_labels[0] = XIGetKnownProperty(AXIS_LABEL_PROP_ABS_X);
+    axes_labels[1] = XIGetKnownProperty(AXIS_LABEL_PROP_ABS_Y);
 
     btn_labels[0] = XIGetKnownProperty(BTN_LABEL_PROP_BTN_LEFT);
     btn_labels[1] = XIGetKnownProperty(BTN_LABEL_PROP_BTN_MIDDLE);
