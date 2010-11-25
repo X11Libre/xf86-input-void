@@ -141,14 +141,16 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 				 0, /* min val */1, /* max val */
 				 1, /* resolution */
 				 0, /* min_res */
-				 1); /* max_res */
+				 1, /* max_res */
+				 Absolute);
 	  InitValuatorAxisStruct(device,
 				 1,
 				 axes_labels[1],
 				 0, /* min val */1, /* max val */
 				 1, /* resolution */
 				 0, /* min_res */
-				 1); /* max_res */
+				 1, /* max_res */
+				 Absolute);
 	  ErrorF("unable to allocate Valuator class device\n"); 
 	  return !Success;
 	}
