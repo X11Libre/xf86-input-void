@@ -29,11 +29,6 @@
 #include "config.h"
 #endif
 
-#ifndef XFree86LOADER
-#include <unistd.h>
-#include <errno.h>
-#endif
-
 #include <misc.h>
 #include <xf86.h>
 #define NEED_XF86_TYPES 1
@@ -46,9 +41,7 @@
 #include <X11/keysym.h>
 #include <mipointer.h>
 
-#ifdef XFree86LOADER
 #include <xf86Module.h>
-#endif
 
 #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
 #include <X11/Xatom.h>
@@ -352,7 +345,6 @@ _X_EXPORT InputDriverRec VOID = {
  *
  ***************************************************************************
  */
-#ifdef XFree86LOADER
 /*
  * xf86VoidUnplug --
  *
@@ -400,4 +392,3 @@ _X_EXPORT XF86ModuleData voidModuleData = {
     xf86VoidUnplug
 };
 
-#endif /* XFree86LOADER */
