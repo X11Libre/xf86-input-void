@@ -59,7 +59,7 @@ inputdir=${moduledir}/input
 AC_SUBST(inputdir)
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XORG, [xorg-server >= 1.0.99.901] xproto)
+PKG_CHECK_MODULES(XORG, [xorg-server >= 1.9.0] xproto)
 
 CFLAGS="$CFLAGS $XORG_CFLAGS "' -I$(top_srcdir)/src'
 AC_SUBST([CFLAGS])
