@@ -48,13 +48,12 @@
 
 #define MAXBUTTONS 3
 
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 12
+#error "XINPUT ABI 12 required."
+#endif
 /******************************************************************************
  * Function/Macro keys variables
  *****************************************************************************/
-
-static const char *DEFAULTS[] = {
-    NULL
-};
 
 static void
 BellProc(
@@ -194,42 +193,20 @@ xf86VoidUninit(InputDriverPtr	drv,
  *
  * called when the module subsection is found in XF86Config
  */
-static InputInfoPtr
+static int
 xf86VoidInit(InputDriverPtr	drv,
-	     IDevPtr		dev,
+	     InputInfoPtr	pInfo,
 	     int		flags)
 {
-    InputInfoPtr pInfo;
-
-    if (!(pInfo = xf86AllocateInput(drv, 0)))
-	return NULL;
-
     /* Initialise the InputInfoRec. */
-    pInfo->name = dev->identifier;
     pInfo->type_name = "Void";
-    pInfo->flags = XI86_KEYBOARD_CAPABLE | XI86_POINTER_CAPABLE | XI86_SEND_DRAG_EVENTS;
     pInfo->device_control = xf86VoidControlProc;
     pInfo->read_input = NULL;
     pInfo->control_proc = NULL;
-    pInfo->close_proc = NULL;
     pInfo->switch_mode = NULL;
-    pInfo->conversion_proc = NULL;
-    pInfo->reverse_conversion_proc = NULL;
     pInfo->fd = -1;
-    pInfo->dev = NULL;
-    pInfo->private_flags = 0;
-    pInfo->always_core_feedback = NULL;
-    pInfo->conf_idev = dev;
 
-    /* Collect the options, and process the common options. */
-    xf86CollectInputOptions(pInfo, DEFAULTS, NULL);
-    xf86ProcessCommonOptions(pInfo, pInfo->options);
-    
-    /* Mark the device configured */
-    pInfo->flags |= XI86_CONFIGURED;
-
-    /* Return the configured device */
-    return (pInfo);
+    return Success;
 }
 
 _X_EXPORT InputDriverRec VOID = {
