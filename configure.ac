@@ -18,18 +18,20 @@
 #  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 #  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
-# Process this file with autoconf to produce a configure script
+dnl Process this file with autoconf to produce a configure script
 
-AC_PREREQ(2.60)
+# Initialize Autoconf
+AC_PREREQ([2.60])
 AC_INIT([xf86-input-void],
         [1.3.1],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         xf86-input-void)
-
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR(.)
-AM_INIT_AUTOMAKE([foreign dist-bzip2])
+AC_CONFIG_HEADERS([config.h])
 
+# Initialize Automake
+AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
 DRIVER_NAME=void
@@ -40,8 +42,6 @@ m4_ifndef([XORG_MACROS_VERSION],
           [m4_fatal([must install xorg-macros 1.8 or later before running autoconf/autogen])])
 XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
-
-AM_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_DISABLE_STATIC
