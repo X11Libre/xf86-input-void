@@ -46,7 +46,6 @@ XORG_DEFAULT_OPTIONS
 # Checks for programs.
 AC_DISABLE_STATIC
 AC_PROG_LIBTOOL
-AC_PROG_CC
 
 AH_TOP([#include "xorg-server.h"])
 
@@ -60,12 +59,5 @@ AC_SUBST(inputdir)
 
 # Checks for pkg-config packages
 PKG_CHECK_MODULES(XORG, [xorg-server >= 1.9.99.1] xproto)
-
-CFLAGS="$CFLAGS $XORG_CFLAGS "' -I$(top_srcdir)/src'
-AC_SUBST([CFLAGS])
-
-# Checks for header files.
-AC_HEADER_STDC
-
 
 AC_OUTPUT([Makefile src/Makefile man/Makefile])
