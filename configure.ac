@@ -23,7 +23,7 @@ dnl Process this file with autoconf to produce a configure script
 # Initialize Autoconf
 AC_PREREQ([2.60])
 AC_INIT([xf86-input-void],
-        [1.3.1],
+        [1.4.0],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         xf86-input-void)
 AC_CONFIG_SRCDIR([Makefile.am])
