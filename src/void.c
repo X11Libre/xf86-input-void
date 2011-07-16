@@ -171,6 +171,9 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
     case DEVICE_CLOSE:
 	device->public.on = FALSE;
 	break;
+
+    default:
+	return BadValue;
     }
     return Success;
 }
