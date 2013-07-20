@@ -91,7 +91,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 {
     InputInfoPtr pInfo;
     unsigned char map[MAXBUTTONS + 1];
-    int i;
+    unsigned char i;
     Bool result;
     Atom btn_labels[MAXBUTTONS] = {0};
     Atom axes_labels[2] = {0};
