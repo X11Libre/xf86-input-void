@@ -60,4 +60,7 @@ AC_SUBST(inputdir)
 # Checks for pkg-config packages
 PKG_CHECK_MODULES(XORG, [xorg-server >= 1.9.99.1] xproto)
 
-AC_OUTPUT([Makefile src/Makefile man/Makefile])
+AC_CONFIG_FILES([Makefile
+		src/Makefile
+		man/Makefile])
+AC_OUTPUT
