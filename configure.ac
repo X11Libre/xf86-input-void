@@ -32,7 +32,6 @@ AC_CONFIG_HEADERS([config.h])
 
 # Initialize Automake
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
-AM_MAINTAINER_MODE
 
 DRIVER_NAME=void
 AC_SUBST([DRIVER_NAME])
