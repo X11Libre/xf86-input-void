@@ -31,7 +31,7 @@ AC_CONFIG_AUX_DIR(.)
 AC_CONFIG_HEADERS([config.h])
 
 # Initialize Automake
-AM_INIT_AUTOMAKE([foreign dist-bzip2])
+AM_INIT_AUTOMAKE([foreign dist-xz])
 
 DRIVER_NAME=void
 AC_SUBST([DRIVER_NAME])
