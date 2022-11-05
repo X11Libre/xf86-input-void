@@ -23,8 +23,8 @@ dnl Process this file with autoconf to produce a configure script
 # Initialize Autoconf
 AC_PREREQ([2.60])
 AC_INIT([xf86-input-void],
-        [1.4.1],
-        [https://gitlab.freedesktop.org/xorg/driver/xf86-input-void/issues],
+        [1.4.2],
+        [https://gitlab.freedesktop.org/xorg/driver/xf86-input-void/-/issues],
         xf86-input-void)
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR(.)
