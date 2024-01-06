@@ -33,6 +33,9 @@ AC_CONFIG_HEADERS([config.h])
 # Initialize Automake
 AM_INIT_AUTOMAKE([foreign dist-xz])
 
+# Initialize libtool
+LT_INIT([disable-static])
+
 DRIVER_NAME=void
 AC_SUBST([DRIVER_NAME])
 
@@ -42,14 +45,10 @@ m4_ifndef([XORG_MACROS_VERSION],
 XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
 
-# Checks for programs.
-AC_DISABLE_STATIC
-AC_PROG_LIBTOOL
-
 AH_TOP([#include "xorg-server.h"])
 
 AC_ARG_WITH(xorg-module-dir,
-            AC_HELP_STRING([--with-xorg-module-dir=DIR],
+            AS_HELP_STRING([--with-xorg-module-dir=DIR],
                            [Default xorg module directory [[default=$libdir/xorg/modules]]]),
             [moduledir="$withval"],
             [moduledir="$libdir/xorg/modules"])
