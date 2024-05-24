@@ -48,9 +48,6 @@
 
 #define MAXBUTTONS 3
 
-#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 12
-#error "XINPUT ABI 12 required."
-#endif
 /******************************************************************************
  * Function/Macro keys variables
  *****************************************************************************/
