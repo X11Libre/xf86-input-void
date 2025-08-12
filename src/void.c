@@ -1,6 +1,6 @@
 /*
  * Copyright 1999 by Frederic Lepied, France. <Lepied@XFree86.org>
- *                                                                            
+ *
  * Permission to use, copy, modify, distribute, and sell this software and its
  * documentation for any purpose is  hereby granted without fee, provided that
  * the  above copyright   notice appear  in   all  copies and  that both  that
@@ -9,8 +9,8 @@
  * advertising or publicity pertaining to distribution of the software without
  * specific,  written      prior  permission.     Frederic  Lepied   makes  no
  * representations about the suitability of this software for any purpose.  It
- * is provided "as is" without express or implied warranty.                   
- *                                                                            
+ * is provided "as is" without express or implied warranty.
+ *
  * FREDERIC  LEPIED DISCLAIMS ALL   WARRANTIES WITH REGARD  TO  THIS SOFTWARE,
  * INCLUDING ALL IMPLIED   WARRANTIES OF MERCHANTABILITY  AND   FITNESS, IN NO
  * EVENT  SHALL FREDERIC  LEPIED BE   LIABLE   FOR ANY  SPECIAL, INDIRECT   OR
@@ -101,7 +101,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
     btn_labels[2] = XIGetKnownProperty(BTN_LABEL_PROP_BTN_RIGHT);
 
     pInfo = device->public.devicePrivate;
-    
+
     switch (what)
     {
     case DEVICE_INIT:
@@ -110,7 +110,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 	for (i = 0; i < MAXBUTTONS; i++) {
 	    map[i + 1] = i + 1;
 	}
-	
+
 	if (InitButtonClassDeviceStruct(device,
 					MAXBUTTONS,
 					btn_labels,
@@ -149,7 +149,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 				 0, /* min_res */
 				 1, /* max_res */
 				 Absolute);
-	  ErrorF("unable to allocate Valuator class device\n"); 
+	  ErrorF("unable to allocate Valuator class device\n");
 	  return !Success;
 	}
 	else {
@@ -157,7 +157,7 @@ xf86VoidControlProc(DeviceIntPtr device, int what)
 	  xf86MotionHistoryAllocate(pInfo);
 	}
 	if (InitPtrFeedbackClassDeviceStruct(device, PointerControlProc) == FALSE) {
-	  ErrorF("unable to init pointer feedback class device\n"); 
+	  ErrorF("unable to init pointer feedback class device\n");
 	  return !Success;
 	}
 	break;
