@@ -2,7 +2,7 @@
 .ds q \N'34'
 .TH VOID 4 2009-09-07 __vendorversion__
 .SH NAME
-void \- null input driver for Xorg
+void \- null input driver for XLibre
 .SH SYNOPSIS
 .nf
 .B "Section \*qInputDevice\*q"
@@ -14,7 +14,7 @@ void \- null input driver for Xorg
 .SH DESCRIPTION
 .B void
 is an dummy/null
-.BR Xorg (1)
+.BR XLibre (1)
 input driver.
 It doesn't connect to any physical device, and it never delivers any events.
 It functions as both a pointer and keyboard device,
@@ -28,7 +28,7 @@ for general configuration details and
 for options that can be used with all input drivers.
 This driver doesn't have any configuration options in addition to those.
 .SH "SEE ALSO"
-.BR Xorg (1),
+.BR XLibre (1),
 .BR xorg.conf (5),
 .BR Xserver (1),
 .BR X (7).
