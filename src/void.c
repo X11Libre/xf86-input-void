@@ -24,10 +24,7 @@
 /* Input device which doesn't output any event. This device can be used
  * as a core pointer or as a core keyboard.
  */
-
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include <misc.h>
 #include <xf86.h>
