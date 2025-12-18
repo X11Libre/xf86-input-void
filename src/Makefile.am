@@ -25,9 +25,9 @@
 # _ladir passes a dummy rpath to libtool so the thing will actually link
 # TODO: -nostdlib/-Bstatic/-lgcc platform magic, not installing the .a, etc.
 AM_CFLAGS = $(BASE_CFLAGS) $(XORG_CFLAGS)
-@DRIVER_NAME@_drv_la_LTLIBRARIES = @DRIVER_NAME@_drv.la
-@DRIVER_NAME@_drv_la_LDFLAGS = -module -avoid-version
-@DRIVER_NAME@_drv_la_LIBADD = $(XORG_LIBS)
-@DRIVER_NAME@_drv_ladir = @inputdir@
+void_drv_la_LTLIBRARIES = void_drv.la
+void_drv_la_LDFLAGS = -module -avoid-version
+void_drv_la_LIBADD = $(XORG_LIBS)
+void_drv_ladir = @inputdir@
 
-@DRIVER_NAME@_drv_la_SOURCES = @DRIVER_NAME@.c
+void_drv_la_SOURCES = void.c
