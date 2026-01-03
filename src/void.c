@@ -53,7 +53,7 @@ static void
 BellProc(
     int percent,
     DeviceIntPtr pDev,
-    pointer ctrl,
+    void *ctrl,
     int unused)
 {
     return;
@@ -234,7 +234,7 @@ _X_EXPORT InputDriverRec VOID = {
  * called when the module subsection is found in XF86Config
  */
 static void
-xf86VoidUnplug(pointer	p)
+xf86VoidUnplug(void *p)
 {
 }
 
@@ -243,11 +243,8 @@ xf86VoidUnplug(pointer	p)
  *
  * called when the module subsection is found in XF86Config
  */
-static pointer
-xf86VoidPlug(pointer	module,
-	    pointer	options,
-	    int		*errmaj,
-	    int		*errmin)
+static void*
+xf86VoidPlug(void *module, void *options, int *errmaj, int *errmin)
 {
     xf86AddInputDriver(&VOID, module, 0);
 
